@@ -24,9 +24,16 @@ class Clock extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="clock">
           <h1>Delay NoMore</h1>
-          <div>{this.state.time.toTimeString()}</div>
+        <div className="items">
+          <h2 className="labels">Date:</h2>
+          <div className="display">{this.state.time.toDateString()}</div>
+        </div>
+        <div className="items">
+          <h2 className="labels">Time:</h2>
+          <div className="display">{this.state.time.toTimeString()}</div>
+        </div>
       </div>
     );
   }

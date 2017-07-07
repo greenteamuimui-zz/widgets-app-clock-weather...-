@@ -22480,12 +22480,12 @@ var Clock = function (_React$Component) {
   }
 
   _createClass(Clock, [{
-    key: 'tick',
+    key: "tick",
     value: function tick() {
       this.setState({ time: new Date() });
     }
   }, {
-    key: 'componentDidMount',
+    key: "componentDidMount",
     value: function componentDidMount() {
       var _this2 = this;
 
@@ -22495,26 +22495,49 @@ var Clock = function (_React$Component) {
       this.state.handle = handle;
     }
   }, {
-    key: 'componentWillUnmount',
+    key: "componentWillUnmount",
     value: function componentWillUnmount() {
       clearInterval(this.state.handle);
       this.state.handle = 0;
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       return _react2.default.createElement(
-        'div',
-        null,
+        "div",
+        { className: "clock" },
         _react2.default.createElement(
-          'h1',
+          "h1",
           null,
-          'Delay NoMore'
+          "Delay NoMore"
         ),
         _react2.default.createElement(
-          'div',
-          null,
-          this.state.time.toTimeString()
+          "div",
+          { className: "items" },
+          _react2.default.createElement(
+            "h2",
+            { className: "labels" },
+            "Date:"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "display" },
+            this.state.time.toDateString()
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "items" },
+          _react2.default.createElement(
+            "h2",
+            { className: "labels" },
+            "Time:"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "display" },
+            this.state.time.toTimeString()
+          )
         )
       );
     }
